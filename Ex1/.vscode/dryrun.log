@@ -1,0 +1,7 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/damian/Desktop/Exercitii/Ex1'
+gcc -Wall -g -c list.c
+gcc -Wall -g -c main.c
+gcc -Wall -g -o main list.o main.o -lpthread
+make: Leaving directory '/home/damian/Desktop/Exercitii/Ex1'
+ 
