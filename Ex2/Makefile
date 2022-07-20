@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -g
 LDFLAGS = -lrt
-DEP = 
+DEP = utils.h
 FILES = main.c
 OBJFILES = main.o
 TARGET = main

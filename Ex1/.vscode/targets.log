@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 19 17:21:39 2022
+# Make data base, printed on Wed Jul 20 07:11:02 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ SNAP_DATA = /var/snap/code/101
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:70902
+JOURNAL_STREAM = 8:69761
 # makefile (from 'Makefile', line 2)
 CFLAGS = -Wall -g
 # environment
@@ -75,11 +75,11 @@ MAKELEVEL := 0
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=1df91ee98159f497a10c635e62d6fe3e
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=1a51ad2e1fd4a783bbd2d03c62d80a44
 # environment
 _ = /snap/code/101/usr/share/code/code
 # environment
-MANAGERPID = 1743
+MANAGERPID = 1746
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -97,7 +97,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # makefile (from 'Makefile', line 4)
 DEP = list.h
 # environment
-SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1956,unix/ubuntu:/tmp/.ICE-unix/1956
+SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1958,unix/ubuntu:/tmp/.ICE-unix/1958
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -113,7 +113,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 16ab926fd1f440dfb7423ba59b8e9b67
+INVOCATION_ID = e25b0227fc574273b49f52e7cc9515f8
 # makefile (from 'Makefile', line 3)
 LDFLAGS = -lpthread
 # environment
@@ -127,7 +127,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 34170
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6449
 # automatic
 %F = $(notdir $%)
 # environment
@@ -141,7 +141,7 @@ PWD = /home/damian/Desktop/Exercitii/Ex1
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1920
+SSH_AGENT_PID = 1922
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -271,22 +271,22 @@ LC_ADDRESS = en_GB.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 34214
+VSCODE_PID = 6493
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=1df91ee98159f497a10c635e62d6fe3e
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=1a51ad2e1fd4a783bbd2d03c62d80a44
 # makefile (from 'Makefile', line 5)
 FILES = list.c main.c
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=23/161=14%
 
 # Pattern-specific Variable Values
+ 
 
 # No pattern-specific variable values.
 
 # Directories
 
 # . (device 2053, inode 393619): 7 files, no impossibilities.
- 
 
 # 7 files, no impossibilities in 1 directories.
 
@@ -383,6 +383,6 @@ main.o: main.c
 # strcache performance: lookups = 32 / hit rate = 46%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/32=3%
-# Finished Make data base on Tue Jul 19 17:21:39 2022
+# Finished Make data base on Wed Jul 20 07:11:02 2022
 
  

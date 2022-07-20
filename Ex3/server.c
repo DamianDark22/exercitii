@@ -163,14 +163,11 @@ int main(int argc, char *argv[])
 						printf("Socket-ul client %d a inchis conexiunea\n", i);
 						rm_client(i, clients);
 						close(i);
-
-						//print_clients(clients);
 						
 						// se scoate din multimea de citire socketul inchis 
 						FD_CLR(i, &read_fds);
 					} else {
-						//printf("S-a primit de la clientul de pe socketul %d mesajul: %s\n", i, buffer);
-					
+						
 						FILE* input = fopen(buffer, "rt");
 						memset(buffer, 0, BUFLEN);
 						if(input == NULL)
@@ -182,8 +179,8 @@ int main(int argc, char *argv[])
 						}
 						else
 						{
-							while(fgets(buffer, BUFLEN-1, input)) {
-								//printf("Citit: %s\n", buffer);
+							while(fgets(buffer, BUFLEN-1, input) && is_client_connected(i, clients)) 
+							{
 								n = send(i, buffer, BUFLEN, 0);
 								DIE(n < 0, "send");
 								memset(buffer, 0, BUFLEN);

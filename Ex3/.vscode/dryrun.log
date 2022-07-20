@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/damian/Desktop/Exercitii/Ex3'
+cc -Wall -g    server.c   -o server
+cc -Wall -g    client.c   -o client
+make: Leaving directory '/home/damian/Desktop/Exercitii/Ex3'
+ 

@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 20 07:04:00 2022
+# Make data base, printed on Wed Jul 20 07:12:04 2022
 
 # Variables
 
@@ -30,8 +28,6 @@ XDG_SESSION_CLASS = user
 SNAP_COMMON = /var/snap/code/common
 # environment
 XDG_SESSION_TYPE = x11
-# makefile (from 'Makefile', line 7)
-TARGET = main
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -45,7 +41,7 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/damian/Desktop/Exercitii/Ex2
+CURDIR := /home/damian/Desktop/Exercitii/Ex3
 # makefile
 SHELL = /bin/sh
 # environment
@@ -54,7 +50,7 @@ SNAP_DATA = /var/snap/code/101
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 JOURNAL_STREAM = 8:69761
-# makefile (from 'Makefile', line 2)
+# makefile (from 'Makefile', line 5)
 CFLAGS = -Wall -g
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
@@ -94,8 +90,6 @@ MAKE_HOST := x86_64-pc-linux-gnu
 PATH = /home/damian/.local/bin:/home/damian/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
-# makefile (from 'Makefile', line 4)
-DEP = utils.h
 # environment
 SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1958,unix/ubuntu:/tmp/.ICE-unix/1958
 # environment
@@ -112,10 +106,10 @@ XDG_MENU_PREFIX = gnome-
 DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
+# makefile (from 'Makefile', line 15)
+PORT = 4242
 # environment
 INVOCATION_ID = e25b0227fc574273b49f52e7cc9515f8
-# makefile (from 'Makefile', line 3)
-LDFLAGS = -lrt
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/101/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -127,17 +121,15 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4483
+GIO_LAUNCHED_DESKTOP_FILE_PID = 7517
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
-# makefile (from 'Makefile', line 6)
-OBJFILES = main.o
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-PWD = /home/damian/Desktop/Exercitii/Ex2
+PWD = /home/damian/Desktop/Exercitii/Ex3
 # default
 .LOADED := 
 # environment
@@ -190,8 +182,6 @@ QT_IM_MODULE = ibus
 SNAP_USER_DATA = /home/damian/snap/code/101
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 1)
-CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # default
@@ -203,7 +193,7 @@ SNAP_REVISION = 101
 # environment
 LC_MONETARY = en_GB.UTF-8
 # makefile
-.DEFAULT_GOAL := main
+.DEFAULT_GOAL := all
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # automatic
@@ -244,6 +234,8 @@ LC_NUMERIC = en_GB.UTF-8
 <F = $(notdir $<)
 # environment
 LC_MEASUREMENT = en_GB.UTF-8
+# makefile (from 'Makefile', line 18)
+IP_SERVER = 127.0.0.1
 # environment
 SNAP_NAME = code
 # environment
@@ -271,22 +263,19 @@ LC_ADDRESS = en_GB.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4530
+VSCODE_PID = 7564
 # environment
 DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=1a51ad2e1fd4a783bbd2d03c62d80a44
-# makefile (from 'Makefile', line 5)
-FILES = main.c
 # variable set hash-table stats:
-# Load=132/1024=13%, Rehash=0, Collisions=23/161=14%
+# Load=128/1024=12%, Rehash=0, Collisions=22/154=14%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
- 
 
 # Directories
 
-# . (device 2053, inode 393548): 8 files, no impossibilities.
+# . (device 2053, inode 524454): 8 files, no impossibilities.
 
 # 8 files, no impossibilities in 1 directories.
 
@@ -296,20 +285,21 @@ FILES = main.c
 
 # Files
 
-# Not a target:
-all:
+ 
+all: server client
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 
-.PHONY: run
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+client: client.c
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
 
-# Not a target:
-main.c:
+.PHONY: clean run_server run_client run_client
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -317,7 +307,28 @@ main.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 07:03:44.556010872
+#  Last modified 2022-07-19 16:04:53.71655
+#  File has been updated.
+#  Successfully updated.
+
+server: server.c
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+run_client:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+	./client ${IP_SERVER} ${PORT} $(RUN_ARGS)
+
+# Not a target:
+client.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-19 17:19:05.740710277
 #  File has been updated.
 #  Successfully updated.
 
@@ -327,49 +338,43 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-run: main
+run_server:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-	./$(TARGET) $(RUN_ARGS)
+#  recipe to execute (from 'Makefile', line 32):
+	./server ${PORT}
+
+# Not a target:
+server.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-19 17:05:17.800680474
+#  File has been updated.
+#  Successfully updated.
 
 clean:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
-	rm -f $(OBJFILES) $(TARGET)
-
-main: main.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
-
-main.o: main.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 20):
-	$(CC) $(CFLAGS) -c main.c
+#  recipe to execute (from 'Makefile', line 40):
+	rm -f server client
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/26=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 121 B / avg = 7 B
-# current buf: size = 8162 B / used = 121 B / count = 16 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 159 B / avg = 8 B
+# current buf: size = 8162 B / used = 159 B / count = 19 / avg = 8 B
 
-# strcache performance: lookups = 31 / hit rate = 48%
+# strcache performance: lookups = 41 / hit rate = 53%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Wed Jul 20 07:04:00 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/41=2%
+# Finished Make data base on Wed Jul 20 07:12:05 2022
 
  

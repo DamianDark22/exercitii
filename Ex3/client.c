@@ -47,7 +47,6 @@ int main(int argc, char *argv[])
 	memset(buffer, 0, BUFLEN);
 	strcpy(buffer, argv[3]);
 
-
 	// se trimite mesaj la server
 	n = send(sockfd, buffer, strlen(buffer), 0);
 	DIE(n < 0, "send");
@@ -69,8 +68,6 @@ int main(int argc, char *argv[])
 
 		while(strncmp(buffer, "DONE", 4) != 0){
 			fprintf(out, "%s", buffer);
-
-			//printf("scris: %s\n", buffer);
 
             memset(buffer, 0, BUFLEN);
 			n = recv(sockfd, buffer, BUFLEN, 0);

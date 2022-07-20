@@ -6,9 +6,9 @@ typedef void (*print_func)(int);
 
 typedef struct list
 {
-    print_func callback;
-    int val;
-    struct list* next;
+	print_func callback;
+	int val;
+	struct list* next;
 }List;
 
 int add(List**, int, print_func);
