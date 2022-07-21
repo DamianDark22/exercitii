@@ -13,7 +13,7 @@ void facy_print_int(int el)
 	printf("%d/ ", el);
 }
 
-void* func_th1(void* arg)
+void* func_th1()
 {
 	printf("add by Thread 1\n");
 	add(&l, 2, print_int);
@@ -39,7 +39,7 @@ void* func_th1(void* arg)
 	return NULL;
 }
 
-void* func_th2(void* arg)
+void* func_th2()
 {
 	printf("add by Thread 2\n");
 	add(&l, 11, print_int);
@@ -59,7 +59,7 @@ void* func_th2(void* arg)
 	return NULL;
 }
 
-void* func_th3(void* arg)
+void* func_th3()
 {
 	printf("add by Thread 3\n");
 	add(&l, 30, print_int);

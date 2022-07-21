@@ -1,6 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/damian/Desktop/Exercitii/Ex2'
-gcc -Wall -g -c main.c
-gcc -Wall -g -o main main.o -lrt
+gcc -Wall -g -o client client.c -lrt
 make: Leaving directory '/home/damian/Desktop/Exercitii/Ex2'
  
+make: *** No rule to make target 'server.c', needed by 'server'.
+

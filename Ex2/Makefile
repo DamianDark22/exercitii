@@ -2,9 +2,10 @@ CC = gcc
 CFLAGS = -Wall -g
 LDFLAGS = -lrt
 DEP = utils.h
-FILES = main.c
-OBJFILES = main.o
-TARGET = main
+FILE_S = server.c
+FILE_C = client.c
+TARGET_S = server
+TARGET_C = client
 
 ifeq (run,$(firstword $(MAKECMDGOALS)))
   # use the rest as arguments for "run"
@@ -13,15 +14,20 @@ ifeq (run,$(firstword $(MAKECMDGOALS)))
   $(eval $(RUN_ARGS):;@:)
 endif
 
-$(TARGET): $(OBJFILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
+all: $(TARGET_S) $(TARGET_C)
 
-main.o: main.c
-	$(CC) $(CFLAGS) -c main.c
+$(TARGET_S): $(FILE_S) $(DEP)
+	$(CC) $(CFLAGS) -o $(TARGET_S) $(FILE_S) $(LDFLAGS)
 
-.PHONY: run
-run: $(TARGET)
-	./$(TARGET) $(RUN_ARGS)
+$(TARGET_C): $(FILE_C) $(DEP)
+	$(CC) $(CFLAGS) -o $(TARGET_C) $(FILE_C) $(LDFLAGS)
+
+.PHONY: run_client
+run_client: $(TARGET_C)
+	./$(TARGET_C) $(RUN_ARGS)
+
+run_server: $(TARGET_S)
+	./$(TARGET_S)
 
 clean:
-	rm -f $(OBJFILES) $(TARGET)
+	rm -f  $(TARGET_C) $(TARGET_S)

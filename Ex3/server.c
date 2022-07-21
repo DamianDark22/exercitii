@@ -55,7 +55,7 @@ void write_clients(char* buffer, int* clients) {
 
 void add_client(int id, int* clients) {
 	clients[id - FD_START] = 1;
-	printf("%d\n", id - FD_START);
+	//printf("%d\n", id - FD_START);
 }
 
 void rm_client(int id, int* clients) {

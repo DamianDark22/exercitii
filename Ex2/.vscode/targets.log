@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
+make: *** No rule to make target 'server.c', needed by 'server'.  Stop.
 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 20 07:04:00 2022
+# Make data base, printed on Thu Jul 21 08:46:46 2022
 
 # Variables
 
@@ -30,8 +30,6 @@ XDG_SESSION_CLASS = user
 SNAP_COMMON = /var/snap/code/common
 # environment
 XDG_SESSION_TYPE = x11
-# makefile (from 'Makefile', line 7)
-TARGET = main
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -49,11 +47,11 @@ CURDIR := /home/damian/Desktop/Exercitii/Ex2
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/101
+SNAP_DATA = /var/snap/code/102
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:69761
+JOURNAL_STREAM = 8:65943
 # makefile (from 'Makefile', line 2)
 CFLAGS = -Wall -g
 # environment
@@ -75,11 +73,15 @@ MAKELEVEL := 0
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=1a51ad2e1fd4a783bbd2d03c62d80a44
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=2d953a9fab6a5f5b6681d04262d9607f
+# makefile (from 'Makefile', line 6)
+FILE_C = client.c
 # environment
-_ = /snap/code/101/usr/share/code/code
+_ = /snap/code/102/usr/share/code/code
+# makefile (from 'Makefile', line 5)
+FILE_S = server.c
 # environment
-MANAGERPID = 1746
+MANAGERPID = 1730
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -87,7 +89,7 @@ LC_NAME = en_GB.UTF-8
 # environment
 VSCODE_CWD = /home/damian
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/101/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -97,15 +99,15 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # makefile (from 'Makefile', line 4)
 DEP = utils.h
 # environment
-SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1958,unix/ubuntu:/tmp/.ICE-unix/1958
+SESSION_MANAGER = local/ubuntu:@/tmp/.ICE-unix/1943,unix/ubuntu:/tmp/.ICE-unix/1943
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/damian/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/101
+SNAP = /snap/code/102
 # environment
-SNAP_VERSION = b06ae3b2
+SNAP_VERSION = 3b889b09
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -113,11 +115,11 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = e25b0227fc574273b49f52e7cc9515f8
+INVOCATION_ID = ebefa9d0783241a1a7498e9800d08070
 # makefile (from 'Makefile', line 3)
 LDFLAGS = -lrt
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/101/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -127,13 +129,11 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4483
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6388
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
-# makefile (from 'Makefile', line 6)
-OBJFILES = main.o
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -141,7 +141,7 @@ PWD = /home/damian/Desktop/Exercitii/Ex2
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1922
+SSH_AGENT_PID = 1907
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -155,7 +155,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/damian/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CODE_CACHE_PATH = /home/damian/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 LOGNAME = damian
 # environment
@@ -187,7 +187,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/damian/snap/code/101
+SNAP_USER_DATA = /home/damian/snap/code/102
 # environment
 SHLVL = 0
 # makefile (from 'Makefile', line 1)
@@ -199,11 +199,11 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = damian
 # environment
-SNAP_REVISION = 101
+SNAP_REVISION = 102
 # environment
 LC_MONETARY = en_GB.UTF-8
 # makefile
-.DEFAULT_GOAL := main
+.DEFAULT_GOAL := all
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # automatic
@@ -217,7 +217,7 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-4591b0f2-1.69.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-4591b0f2-1.69.2-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
@@ -232,8 +232,12 @@ MFLAGS = -pqrR
 GDK_BACKEND = x11
 # environment
 LC_PAPER = en_GB.UTF-8
+# makefile (from 'Makefile', line 8)
+TARGET_C = client
 # environment
 QT_ACCESSIBILITY = 1
+# makefile (from 'Makefile', line 7)
+TARGET_S = server
 # default
 MAKEFILES := 
 # environment
@@ -271,24 +275,22 @@ LC_ADDRESS = en_GB.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4530
+VSCODE_PID = 6434
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=1a51ad2e1fd4a783bbd2d03c62d80a44
-# makefile (from 'Makefile', line 5)
-FILES = main.c
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=2d953a9fab6a5f5b6681d04262d9607f
 # variable set hash-table stats:
-# Load=132/1024=13%, Rehash=0, Collisions=23/161=14%
+# Load=133/1024=13%, Rehash=0, Collisions=21/169=12%
 
+ 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
- 
 
 # Directories
 
-# . (device 2053, inode 393548): 8 files, no impossibilities.
+# . (device 2053, inode 393548): 6 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -296,20 +298,26 @@ FILES = main.c
 
 # Files
 
-# Not a target:
-all:
+all: server client
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
 
-.PHONY: run
+client: client.c utils.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) $(CFLAGS) -o $(TARGET_C) $(FILE_C) $(LDFLAGS)
+
+.PHONY: run_client
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-main.c:
+utils.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -317,9 +325,30 @@ main.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 07:03:44.556010872
+#  Last modified 2022-07-21 08:45:23.412185411
 #  File has been updated.
 #  Successfully updated.
+
+server: server.c utils.h
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	$(CC) $(CFLAGS) -o $(TARGET_S) $(FILE_S) $(LDFLAGS)
+
+run_client: client
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 27):
+	./$(TARGET_C) $(RUN_ARGS)
+
+# Not a target:
+client.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -327,49 +356,40 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-run: main
-#  Phony target (prerequisite of .PHONY).
+run_server: server
 #  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	./$(TARGET_S)
+
+# Not a target:
+server.c:
+#  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-	./$(TARGET) $(RUN_ARGS)
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
-	rm -f $(OBJFILES) $(TARGET)
-
-main: main.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
-
-main.o: main.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 20):
-	$(CC) $(CFLAGS) -c main.c
+#  recipe to execute (from 'Makefile', line 33):
+	rm -f  $(TARGET_C) $(TARGET_S)
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/26=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/36=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 121 B / avg = 7 B
-# current buf: size = 8162 B / used = 121 B / count = 16 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 152 B / avg = 8 B
+# current buf: size = 8162 B / used = 152 B / count = 18 / avg = 8 B
 
-# strcache performance: lookups = 31 / hit rate = 48%
+# strcache performance: lookups = 38 / hit rate = 52%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Wed Jul 20 07:04:00 2022
+# Load=18/8192=0%, Rehash=0, Collisions=1/38=3%
+# Finished Make data base on Thu Jul 21 08:46:46 2022
 
  

@@ -9,6 +9,8 @@
 #include <netdb.h>
 #include "helpers.h"
 
+#define MAX 1024
+
 void usage(char *file)
 {
 	fprintf(stderr, "Usage: %s server_address server_port\n", file);
@@ -42,43 +44,59 @@ int main(int argc, char *argv[])
 
 	FD_SET(STDIN_FILENO, &read_fds);
 	FD_SET(sockfd, &read_fds);
-
 	
-	memset(buffer, 0, BUFLEN);
-	strcpy(buffer, argv[3]);
-
-	// se trimite mesaj la server
-	n = send(sockfd, buffer, strlen(buffer), 0);
-	DIE(n < 0, "send");
-
-	memset(buffer, 0, BUFLEN);
-	n = recv(sockfd, buffer, BUFLEN, 0);
-	DIE(n < 0, "recv");
-	//printf("primul raspuns: %s\n", buffer);
-
-	if(strncmp(buffer, "Fisierul", 8) != 0){
-
-		char nume[40];
-		sprintf(nume, "%s_copy", argv[3]);
-		FILE* out = fopen(nume, "wt");
-		if(out == NULL){
-			printf("Problema creare fisier !\n");
-			return 0;
-		}
-
-		while(strncmp(buffer, "DONE", 4) != 0){
-			fprintf(out, "%s", buffer);
-
-            memset(buffer, 0, BUFLEN);
-			n = recv(sockfd, buffer, BUFLEN, 0);
-			DIE(n < 0, "recv");
-		}
-
-		fclose(out);
-	}
-	else
+	char* line = calloc(MAX, sizeof(char));
+	if(line == NULL)
 	{
-		printf("%s\n", buffer);
+		printf("Probleme alocare ! \n");
+		return 0;
+	}
+	
+	while (1)
+	{
+		memset(line, 0, MAX);
+		fgets(line, MAX - 1, stdin);
+
+		if(strcmp(line, "\n") == 0)
+			break;
+
+		line[strlen(line)-1] = '\0';
+
+		memset(buffer, 0, BUFLEN);
+		strcpy(buffer, line);
+
+		// se trimite mesaj la server cu numele fisierului
+		n = send(sockfd, buffer, strlen(buffer), 0);
+		DIE(n < 0, "send");
+
+		memset(buffer, 0, BUFLEN);
+		n = recv(sockfd, buffer, BUFLEN, 0);
+		DIE(n < 0, "recv");
+
+		if(strncmp(buffer, "Fisierul", 8) != 0){
+
+			char nume[40];
+			sprintf(nume, "%s_copy", line);
+			FILE* out = fopen(nume, "wt");
+			if(out == NULL){
+				printf("Problema creare fisier !\n");
+				return 0;
+			}
+
+			while(strncmp(buffer, "DONE", 4) != 0){
+				fprintf(out, "%s", buffer);
+
+				memset(buffer, 0, BUFLEN);
+				n = recv(sockfd, buffer, BUFLEN, 0);
+				DIE(n < 0, "recv");
+			}
+
+			fclose(out);
+		}
+		else
+		{
+			printf("%s\n", buffer);
+		}
 	}
 
 	close(sockfd);
